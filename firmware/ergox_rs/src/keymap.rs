@@ -1,15 +1,16 @@
-use rmk::action::{KeyAction};
+use rmk::action::{KeyAction, Action};
+use rmk::keycode::KeyCode;
 use rmk::{a, k, layer, mo};
 
 pub(crate) const COL: usize = 7;
 pub(crate) const ROW: usize = 12;
 pub(crate) const NUM_LAYER: usize = 3;
 
-// macro_rules! mt {
-//     ($a: ident, $b: ident) => {
-//         KeyAction::TapHold(Action::Key(KeyCode::$a), Action::Key(KeyCode::$b))
-//     };
-// }
+macro_rules! mt {
+    ($a: ident, $b: ident) => {
+        KeyAction::TapHold(Action::Key(KeyCode::$a), Action::Key(KeyCode::$b))
+    };
+}
 
 #[rustfmt::skip]
 pub fn get_default_keymap() -> [[[KeyAction; COL]; ROW]; NUM_LAYER] {
@@ -19,7 +20,7 @@ pub fn get_default_keymap() -> [[[KeyAction; COL]; ROW]; NUM_LAYER] {
             [k!(Escape), k!(F1), k!(F2), k!(F3), k!(F4), k!(F5), k!(F6)],
             [k!(Grave), k!(Kc1), k!(Kc2), k!(Kc3), k!(Kc4), k!(Kc5), a!(No)],
             [k!(Tab), k!(Q), k!(W), k!(E), k!(R), k!(T), a!(No)],
-            [k!(Escape), k!(A), k!(S), k!(D), k!(F), k!(G), a!(No)],
+            [mt!(Escape, LCtrl), k!(A), k!(S), k!(D), k!(F), k!(G), a!(No)],
             [k!(LShift), k!(Z), k!(X), k!(C), k!(V), k!(B), a!(No)],
             [k!(LGui), k!(Minus), k!(Equal), k!(Quote), mo!(1), k!(Space), k!(Escape)],
             // Right
