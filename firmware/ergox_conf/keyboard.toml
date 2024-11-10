@@ -1,0 +1,90 @@
+# Documentation: https://haobogu.github.io/rmk/keyboard_configuration.html
+[keyboard]
+name = "RMK Keyboard"
+product_name = "RMK Keyboard"
+vendor_id = 0x4c4b
+product_id = 0x4643
+manufacturer = "lqlklu"
+chip = "rp2040"
+
+[layout]
+rows = 12
+cols = 7
+layers = 3
+keymap = [
+    [
+        # Left
+        ["Escape", "F1", "F2", "F3", "F4", "F5", "F6", ],
+        ["Grave", "Kc1", "Kc2", "Kc3", "Kc4", "Kc5", "_", ],
+        ["LAlt", "Q", "W", "E", "R", "T", "_", ],
+        ["LCtrl", "A", "S", "D", "F", "G", "_", ],
+        ["LShift", "Z", "X", "C", "V", "B", "_", ],
+        ["LGui", "Minus", "Equal", "Quote", "MO(1)", "Space", "Escape", ],
+        # Right
+        ["F7", "F8", "F9", "F10", "F11", "F12", "Insert", ],
+        ["_", "Kc6", "Kc7", "Kc8", "Kc9", "Kc0", "Delete", ],
+        ["_", "Y", "U", "I", "O", "P", "RAlt", ],
+        ["_", "H", "J", "K", "L", "Semicolon", "RCtrl", ],
+        ["_", "N", "M", "Comma", "Dot", "Slash", "RShift", ],
+        ["Backspace", "Enter", "MO(2)", "Backslash", "LeftBracket", "RightBracket", "RGui", ],
+    ],
+    [
+        # Left
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "UP", "_", "_", "_", "_", ],
+        ["_", "Left", "Down", "Right", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        # Right
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "Left", "Down", "UP", "Right", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+    ],
+    [
+        # Left
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        # Right
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "Left", "Down", "UP", "Right", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+        ["_", "_", "_", "_", "_", "_", "_", ],
+    ],
+]
+
+[light]
+
+[storage]
+
+[split]
+connection = "serial"
+
+[split.central]
+rows = 6
+cols = 7
+row_offset = 0
+col_offset = 0
+serial = [
+    { instance = "UART0", tx_pin = "PIN_0", rx_pin = "PIN_1" },
+]
+input_pins = ["PIN_2", "PIN_3", "PIN_6", "PIN_15", "PIN_14", "PIN_11"]
+output_pins = ["PIN_22", "PIN_21", "PIN_20", "PIN_19", "PIN_18", "PIN_17", "PIN_16"]
+
+[[split.peripheral]]
+rows = 6
+cols = 7
+row_offset = 6
+col_offset = 0
+serial = [{ instance = "UART0", tx_pin = "PIN_0", rx_pin = "PIN_1" }]
+input_pins = ["PIN_2", "PIN_3", "PIN_6", "PIN_15", "PIN_14", "PIN_11"]
+output_pins = ["PIN_16", "PIN_17", "PIN_18", "PIN_19", "PIN_20", "PIN_21", "PIN_22", ]
