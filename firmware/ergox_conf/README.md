@@ -25,4 +25,4 @@ Keyboard firmware for cortex-m, with layer/dynamic keymap/[vial](https://get.via
 `elf2uf2-rs target/thumbv6m-none-eabi/release/central target/thumbv6m-none-eabi/release/central.uf2`
 
 ## Flash
-Copy the uf2 file to the pico where you need to plug it into USB
+Copy the central.uf2 file to the pico where you need to plug it into USB
