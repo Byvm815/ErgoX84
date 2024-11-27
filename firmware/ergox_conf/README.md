@@ -14,3 +14,12 @@ Keyboard firmware for cortex-m, with layer/dynamic keymap/[vial](https://get.via
 
 - [ ] Update the family ID of your microcontroller in `Makefile.toml`, if you want to generate .uf2 firmware. The available family ID can be found in `scripts/uf2conv.py`
 
+##Build && convert format
+
+`rustup target add thumbv6m-none-eabi`
+
+`cargo build --release --target=thumbv6m-none-eabi`
+
+`elf2uf2-rs target/thumbv6m-none-eabi/release/peripheral target/thumbv6m-none-eabi/release/peripheral.uf2`
+
+`elf2uf2-rs target/thumbv6m-none-eabi/release/central target/thumbv6m-none-eabi/release/central.uf2`
