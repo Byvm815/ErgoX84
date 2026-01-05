@@ -1,6 +1,6 @@
 # ErgoX Keyboard
 
-![Preview](./images/IMG_20241110_173417.jpg)
+![Preview](/DOC/ReadmeImage/P41127-192342.jpg)
 
 ## BOM Summary
 
